@@ -1,0 +1,27 @@
+{
+  "name": "gcloud-storage-json-upload",
+  "version": "1.0.0",
+  "description": "Upload a file to Google Cloud Storage using the HTTP JSON api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "google",
+    "cloud",
+    "upload",
+    "bucket",
+    "storage",
+    "json",
+    "http"
+  ],
+  "author": "Shane O'Sullivan",
+  "license": "ISC",
+  "dependencies": {
+    "jsrsasign": "^8.0.12",
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.0"
+  }
+}
