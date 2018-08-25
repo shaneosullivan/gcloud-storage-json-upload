@@ -1,8 +1,10 @@
 {
   "name": "gcloud-storage-json-upload",
-  "version": "1.0.0",
-  "description": "Upload a file to Google Cloud Storage using the HTTP JSON api",
+  "version": "1.0.1",
+  "description":
+    "Upload a file to Google Cloud Storage using the HTTP JSON api",
   "main": "index.js",
+  "homepage": "https://github.com/shaneosullivan/gcloud-storage-json-upload",
   "scripts": {
     "test": "test"
   },
