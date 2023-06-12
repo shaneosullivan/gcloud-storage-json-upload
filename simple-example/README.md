@@ -16,11 +16,12 @@ as you can use this token elsewhere with Google's services.
 
 ### Example
 
-Firstly, see the `example/run_example.js` file for a sample of how to use
+Firstly, see the `simple-example/run_example.js` file for a sample of how to use
 the code. Run it using
 
 ```
-node run_example.js --file=FILE_TO_UPLOAD --service_key=SERVICE_KEY_FILE
+cd simple-example
+node ./run_example.js --file=FILE_TO_UPLOAD --service_key=SERVICE_KEY_FILE
 ```
 
 The `SERVICE_KEY_FILE` is a file containing your generated private key for a
@@ -42,7 +43,7 @@ const privateKey = ......
 const serviceAccountEmail = ......
 
 auth(privateKey, serviceAccountEmail).then(token => {
-  // Cool, I have a token that lasts for an hour, I can do stuff with it!  
+  // Cool, I have a token that lasts for an hour, I can do stuff with it!
 })
 ```
 
