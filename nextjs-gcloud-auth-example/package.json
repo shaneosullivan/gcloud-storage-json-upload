@@ -12,6 +12,7 @@
     "@types/node": "20.3.0",
     "@types/react": "18.2.11",
     "@types/react-dom": "18.2.4",
+    "gcloud-storage-json-upload": "^1.0.2",
     "jsrsasign": "^10.8.6",
     "next": "13.4.5",
     "react": "18.2.0",

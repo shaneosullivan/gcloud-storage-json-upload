@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 import serviceAccount from "../../src/firebase_private_key.json";
-import googleCloudStorageAuth from "@/src/googleCloudStorageAuth";
+import { auth as googleCloudStorageAuth } from "gcloud-storage-json-upload";
 
 type Data =
   | {
@@ -40,7 +40,7 @@ export default async function createStorageToken(
     res.status(200);
     res.json({
       url,
-      accessToken: storageToken.access_token,
+      accessToken: storageToken,
     });
     res.end();
   } catch (err) {

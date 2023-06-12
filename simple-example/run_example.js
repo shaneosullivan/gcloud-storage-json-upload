@@ -1,7 +1,7 @@
 const fs = require("fs");
 const minimist = require("minimist");
-const auth = require("./auth");
-const upload = require("./upload");
+const auth = require("../auth");
+const upload = require("../upload");
 
 const args = minimist(process.argv.slice(2), {
   string: ["file", "service_key"],
