@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.main button {
+  padding: 16px;
+}
+
+.description {
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+
+.code {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.main .box {
+  padding-bottom: 32px;
+  padding-top: 32px;
+}
+
+.uploadBox {
+  border: 1px solid black;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.textarea {
+  padding: 16px;
+}
