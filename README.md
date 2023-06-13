@@ -48,9 +48,8 @@ auth(privateKey, serviceAccountEmail).then(token => {
 ```
 
 - `upload` uploads a file to the server. You pass it the file path to upload,
-  the token you received from the `auth` function, and the storage ID of the
-  Google Cloud storage bucket you are using. This is generally the same as the
-  `project_id` field in the private key file.
+  the token you received from the `auth` function, the storage ID of the
+  Google Cloud storage bucket you are using and the content type. The storage ID is generally the same as the `project_id` field in the private key file.
 
 ```
 const {auth, upload} = require('gcloud-storage-json-upload');
@@ -62,7 +61,7 @@ const storageID = ......
 
 
 auth(privateKey, serviceAccountEmail).then(token => {
-  upload(filePath, token, storageID).then(() => {
+  upload(filePath, token, storageID, "text/csv").then(() => {
     console.log('Sweet my file uploaded');
   }).catch((err) => {
      console.log('Uh oh, file upload failed with error',err);

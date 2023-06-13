@@ -8,7 +8,7 @@ const path = require("path");
 // - storageID: The ID of your storage bucket.  Get this in your Google Cloud console
 //              at https://console.cloud.google.com/storage/ .  It looks like "{PROJECT_ID}.appspot.com",
 //              omit the ".appspot.com"
-function uploadFile(filePath, gcToken, storageID) {
+function uploadFile(filePath, gcToken, storageID, contentType) {
   return new Promise((resolve, reject) => {
     const fileName = encodeURIComponent(path.basename(filePath));
     const stats = fs.statSync(filePath);
@@ -18,16 +18,16 @@ function uploadFile(filePath, gcToken, storageID) {
     fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "text/csv",
+        "Content-Type": contentType || "text/plain",
         "Content-Length": fileSizeInBytes,
-        Authorization: `Bearer ${gcToken}`
+        Authorization: `Bearer ${gcToken}`,
       },
-      body: fs.createReadStream(filePath)
+      body: fs.createReadStream(filePath),
     })
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .then(response => {
+      .then((response) => {
         if (!response.error) {
           return resolve(true);
         }
@@ -37,7 +37,7 @@ function uploadFile(filePath, gcToken, storageID) {
           )}`
         );
       })
-      .catch(err => {
+      .catch((err) => {
         reject(err);
       });
   });
